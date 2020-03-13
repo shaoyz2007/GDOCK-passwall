@@ -83,7 +83,7 @@ jobs:
       uses: P3TERX/debugger-action@master
     #  if: env.SSH_ACTIONS == 'true'
     
-    
+    # ssh进入lede目录，生成.config文件cd lede && make menuconfig
         
         
     - name: Download package
