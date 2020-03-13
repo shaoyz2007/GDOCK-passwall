@@ -10,9 +10,9 @@ name: 树莓派1-20200313
 on: 
   release:
     types: [published]
-  push:
-    branches: 
-      - master
+#  push:
+#    branches: 
+#      - master
 #  watch:
 #    types: [started]
 
