@@ -10,9 +10,9 @@ name: 树莓派1-20200313
 on: 
   release:
     types: [published]
-#  push:
-#    branches: 
-#      - master
+  push:
+    branches: 
+      - master
 #  watch:
 #    types: [started]
 
@@ -71,7 +71,7 @@ jobs:
       run: |
         #=================================================
         #+++++++++++++++++++++++++++++++++++++++++++++++++
-        cp -f pi1.config ./lede/.config
+        #cp -f pi1.config ./lede/.config
         chmod +x pi3.sh
         cd lede
         ../pi3.sh
@@ -79,8 +79,8 @@ jobs:
         #=================================================
         make defconfig
         
-    #- name: SSH connection to Actions
-    #  uses: P3TERX/debugger-action@master
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
     #  if: env.SSH_ACTIONS == 'true'
     
     # ssh进入lede目录，生成.config文件cd lede && make menuconfig
