@@ -1,10 +1,10 @@
 #=================================================
-#   Description: Build  树莓派3固件 FROM LEAN'S LEDE
+#   Description: Build netgear r7000固件 FROM LEAN'S LEDE
 #   Author: shaojh
 #=================================================
 
 #=================================================
-name: 树莓派3-20200313
+name: netgear r7000-20200319
 #=================================================
 
 on: 
@@ -71,7 +71,7 @@ jobs:
       run: |
         #=================================================
         #+++++++++++++++++++++++++++++++++++++++++++++++++
-        cp -f pi3.config ./lede/.config
+        cp -f r7000.config ./lede/.config
         chmod +x pi3.sh
         cd lede
         ../pi3.sh
@@ -115,5 +115,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         #=================================================
-        name: 树莓派3-20200313
+        name: netgear r7000-20200319
         path: ./lede/bin
