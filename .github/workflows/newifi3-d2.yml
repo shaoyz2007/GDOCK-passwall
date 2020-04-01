@@ -4,15 +4,15 @@
 #=================================================
 
 #=================================================
-name: newifi3 d2 20200331
+name: newifi3 d2 20200401
 #=================================================
 
 on: 
   release:
     types: [published]
-#  push:
-#    branches: 
-#      - master
+  push:
+    branches: 
+      - master
 #  watch:
 #    types: [started]
 
@@ -117,5 +117,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         #=================================================
-        name: newifi3 d2 20200331
+        name: newifi3 d2 20200401
         path: ./lede/bin
