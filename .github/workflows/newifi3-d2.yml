@@ -58,6 +58,8 @@ jobs:
     - name: Clone passwall code
       run: |
         cd lede/package &&  git clone https://github.com/Lienol/openwrt-package.git
+        cd lean  && rm -rf luci-theme-argon
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         
         
         
@@ -72,9 +74,9 @@ jobs:
         #=================================================
         #+++++++++++++++++++++++++++++++++++++++++++++++++
         cp -f newifi3d2.config ./lede/.config
-        chmod +x pi3.sh
+        #chmod +x pi3.sh
         cd lede
-        ../pi3.sh
+        #../pi3.sh
         #++++++++++++++++++++++++++++++++++++++++++++++++
         #=================================================
         make defconfig
