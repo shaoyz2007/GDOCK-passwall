@@ -10,9 +10,9 @@ name: newifi3 d2 20200401
 on: 
   release:
     types: [published]
-#  push:
-#    branches: 
-#      - master
+  push:
+    branches: 
+      - master
 #  watch:
 #    types: [started]
 
@@ -73,7 +73,7 @@ jobs:
       run: |
         #=================================================
         #+++++++++++++++++++++++++++++++++++++++++++++++++
-        #cp -f newifi3d2.config ./lede/.config
+        cp -f newifi3-auto.config ./lede/.config
         #chmod +x pi3.sh
         cd lede
         #../pi3.sh
