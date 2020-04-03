@@ -10,9 +10,9 @@ name: newifi3 d2 20200401
 on: 
   release:
     types: [published]
-  push:
-    branches: 
-      - master
+#  push:
+#    branches: 
+#      - master
 #  watch:
 #    types: [started]
 
