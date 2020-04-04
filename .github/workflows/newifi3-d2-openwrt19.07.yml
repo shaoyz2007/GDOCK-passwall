@@ -1,10 +1,10 @@
 #=================================================
-#   Description: Build newifi3 d2 固件 FROM LEAN'S LEDE
+#   Description: Build newifi3 d2 固件 FROM LEAN'S openwrt
 #   Author: shaojh
 #=================================================
 
 #=================================================
-name: newifi3 d2 20200401
+name: newifi3 d2 20200404
 #=================================================
 
 on: 
@@ -53,7 +53,7 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       run: |
-        git clone https://github.com/coolsnowwolf/lede lede
+        git clone -b dev-lean-lede https://github.com/Lienol/openwrt lede
         
     - name: Clone passwall code
       run: |
@@ -117,5 +117,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         #=================================================
-        name: newifi3 d2 20200401
+        name: newifi3 d2 20200404
         path: ./lede/bin
