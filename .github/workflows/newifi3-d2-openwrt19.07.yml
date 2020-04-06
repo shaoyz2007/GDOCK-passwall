@@ -4,7 +4,7 @@
 #=================================================
 
 #=================================================
-name: newifi3 d2 20200404
+name: newifi3 d2 20200406
 #=================================================
 
 on: 
@@ -55,11 +55,11 @@ jobs:
       run: |
         git clone -b dev-19.07 https://github.com/Lienol/openwrt openwrt
         
-    - name: Clone luci-app-vssr 
-      run: |
-        cd openwrt/package/lean 
-        git clone https://github.com/jerrykuku/lua-maxminddb.git
-        git clone https://github.com/jerrykuku/luci-app-vssr.git
+    #- name: Clone luci-app-vssr 
+    #  run: |
+    #    cd openwrt/package/lean 
+    #    git clone https://github.com/jerrykuku/lua-maxminddb.git
+    #    git clone https://github.com/jerrykuku/luci-app-vssr.git
         
     - name: feeds clean
       run: cd openwrt && ./scripts/feeds clean     
@@ -74,7 +74,7 @@ jobs:
       run: |
         #=================================================
         #+++++++++++++++++++++++++++++++++++++++++++++++++
-        cp -f newifi3-auto.config ./openwrt/.config
+        #cp -f newifi3-auto.config ./openwrt/.config
         #chmod +x pi3.sh
         cd openwrt
         #../pi3.sh
@@ -82,8 +82,8 @@ jobs:
         #=================================================
         make defconfig
         
-    #- name: SSH connection to Actions
-    #  uses: P3TERX/debugger-action@master
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
     #  if: env.SSH_ACTIONS == 'true'
     
            
@@ -116,5 +116,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         #=================================================
-        name: newifi3 d2 20200404
+        name: newifi3 d2 20200406
         path: ./openwrt/bin
