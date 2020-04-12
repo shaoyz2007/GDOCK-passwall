@@ -4,7 +4,7 @@
 #=================================================
 
 #=================================================
-name: newifi3 d2 lede20200406
+name: newifi3 d2 lede20200412
 #=================================================
 
 on: 
@@ -73,7 +73,7 @@ jobs:
       run: |
         #=================================================
         #+++++++++++++++++++++++++++++++++++++++++++++++++
-        #cp -f newifi3-auto.config ./lede/.config
+        cp -f n3.config ./lede/.config
         #chmod +x pi3.sh
         cd lede
         #../pi3.sh
@@ -81,8 +81,8 @@ jobs:
         #=================================================
         make defconfig
         
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
+    #- name: SSH connection to Actions
+    #  uses: P3TERX/debugger-action@master
     #  if: env.SSH_ACTIONS == 'true'
     
     # ssh进入lede目录，生成.config文件cd lede && make menuconfig
@@ -120,5 +120,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         #=================================================
-        name: newifi3 d2 lede20200406
+        name: newifi3 d2 lede20200412
         path: ./lede/bin
