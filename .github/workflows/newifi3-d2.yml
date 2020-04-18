@@ -4,7 +4,7 @@
 #=================================================
 
 #=================================================
-name: newifi3 d2 lede20200412
+name: newifi3 d2 lede20200418
 #=================================================
 
 on: 
@@ -13,8 +13,8 @@ on:
   push:
     branches: 
       - master
-#  watch:
-#    types: [started]
+  watch:
+    types: [started]
 
 jobs:
   build:
@@ -75,11 +75,11 @@ jobs:
         #+++++++++++++++++++++++++++++++++++++++++++++++++
         cp -f n3.config ./lede/.config
         #chmod +x pi3.sh
-        cd lede
+        #cd lede
         #../pi3.sh
         #++++++++++++++++++++++++++++++++++++++++++++++++
         #=================================================
-        make defconfig
+        #make defconfig
         
     #- name: SSH connection to Actions
     #  uses: P3TERX/debugger-action@master
@@ -120,5 +120,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         #=================================================
-        name: newifi3 d2 lede20200412
+        name: newifi3 d2 lede20200418
         path: ./lede/bin
